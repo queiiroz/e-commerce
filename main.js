@@ -66,12 +66,12 @@ const catalogo = [
 ];
 
 for (produtoCatalogo of catalogo) {
-  const cardProduct = `<div id="card-1">
+  const cardProduct = `<div class="border-solid border-2 border-sky-500 w-80 m-2" id="card-1">
 <img
   src="./assets/img/${produtoCatalogo.imagem}"
   alt="${produtoCatalogo.alt}"
 />
-<p>${produtoCatalogo.marca}</p>
+<p class="marca">${produtoCatalogo.marca}</p>
 <p>${produtoCatalogo.nome}</p>
 <p>R$${produtoCatalogo.preco}</p>
 <button>Comprar</button>
