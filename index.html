@@ -7,38 +7,36 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="image/png" href="./assets/logo/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <body>
+  <body class="bg-stone-200 flex flex-col ">
 
-    <section id="carrinho" class="fixed top-0 right-[-20rem] bg-stone-900 text-stone-50 h-screen w-80 ">
+    <section id="carrinho" class="fixed top-0 right-[-24rem] bg-stone-900 text-stone-50 h-screen w-96 z-50 duration-300 shadow-md shadow-black p-5 flex flex-col justify-between">
       <div id="cabecalho-carrinho" class="flex justify-between m-4">
         <p>Meu carrinho</p>
-        <button id="fechar-carrinho"><i class="fa-solid fa-xmark"></i></button>
+        <button id="fechar-carrinho"><i class="fa-solid fa-xmark hover:text-stone-500"></i></button>
       </div>    
       <section id="produtos-carrinho">
-      <p>XDJ-RX3</p>
-      <p>DDJ-1000SRT</p>
-      <p>XDJ-RR</p>
+
       </section>
       <p id="preco-total">R$200</p>
       <button class="bg-stone-50 text-stone-950 p-1">Finalizar Compra</button>
     </section>
 
-    <header class="flex bg-stone-900 p-2 justify-between">
-      <img class="h-16 " src="./assets/logo/logo.png" alt="Logo do site" />
+    <header class="flex bg-stone-900 p-4 justify-between items-center sticky top-0 h-20 shadow-md shadow-stone-500 z-10">
+      <img class="h-12 " src="./assets/logo/logo.png" alt="Logo do site" />
       
       <div class="text-stone-50 flex gap-5 mx-2">
-        <button>
-          <i class="fa-solid fa-cart-shopping"></i>
+        <button id="abrir-carrinho">
+          <i class="fa-solid fa-cart-shopping hover:text-stone-500"></i>
         </button>
         <button>
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user hover:text-stone-500"></i>
         </button>
       </div>
 
     </header>
-    <main>
-      <section class="flex flex-wrap" id="container-produto"></section>
+    <main class="bg-stone-200">
+      <section class="flex flex-wrap p-10 justify-center gap-8" id="container-produto"></section>
     </main>
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
