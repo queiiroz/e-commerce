@@ -1,6 +1,6 @@
 export const catalogo = [
   {
-    id: 1,
+    id: "1",
     nome: "OPUS-QUAD",
     marca: "Pioneer",
     preco: 28000,
@@ -8,7 +8,7 @@ export const catalogo = [
     alt: "OPUS-QUAD Sistema tudo em um DJ profissional (preto)",
   },
   {
-    id: 2,
+    id: "2",
     nome: "XDJ-RX3",
     marca: "Pioneer",
     preco: 18000,
@@ -16,7 +16,7 @@ export const catalogo = [
     alt: "XDJ-RX3 Sistema DJ tudo-em-um profissional de 2 canais (preto)",
   },
   {
-    id: 3,
+    id: "3",
     nome: "XDJ-XZ",
     marca: "Pioneer",
     preco: 22000,
@@ -24,7 +24,7 @@ export const catalogo = [
     alt: "XDJ-XZ Sistema DJ tudo-em-um profissional de 4 canais",
   },
   {
-    id: 4,
+    id: "4",
     nome: "XDJ-RR",
     marca: "Pioneer",
     preco: 10000,
@@ -32,7 +32,7 @@ export const catalogo = [
     alt: "XDJ-RR Sistema DJ tudo-em-um profissional de 2 canais (preto)",
   },
   {
-    id: 5,
+    id: "5",
     nome: "XDJ-RX2",
     marca: "Pioneer",
     preco: 14000,
@@ -40,7 +40,7 @@ export const catalogo = [
     alt: "XDJ-RX2 2-channel performance all-in-one DJ system",
   },
   {
-    id: 6,
+    id: "6",
     nome: "DDJ-1000SRT",
     marca: "Pioneer",
     preco: 12000,
@@ -48,7 +48,7 @@ export const catalogo = [
     alt: "DDJ-1000SRT Controlador DJ de atuação de 4 canais para Serato DJ Pro",
   },
   {
-    id: 7,
+    id: "7",
     nome: "DDJ-RZ",
     marca: "Pioneer",
     preco: 15000,
@@ -56,7 +56,7 @@ export const catalogo = [
     alt: "DDJ-RZ 4-channel professional DJ controller for rekordbox",
   },
   {
-    id: 8,
+    id: "8",
     nome: "DDJ-800",
     marca: "Pioneer",
     preco: 9000,
