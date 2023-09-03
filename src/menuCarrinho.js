@@ -20,14 +20,52 @@ export function inicializarCarrinho() {
   botaoFecharCarrinho.addEventListener("click", abrirCarrinho);
 }
 
-export function addCarrinho(idProduto) {
-  idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+function removerDoCarrinho(idProduto) {
+  delete idsProdutoCarrinhoComQuantidade[idProduto];
+  renderProdutosCarrinho();
+}
+
+function incrementarQuantidadeProduto(idProduto) {
+  idsProdutoCarrinhoComQuantidade[idProduto]++;
+  atualizarInfoQuantidade(idProduto);
+}
+
+function decrementarQuantidadeProduto(idProduto) {
+  if (idsProdutoCarrinhoComQuantidade[idProduto] === 1) {
+    removerDoCarrinho(idProduto);
+    return;
+  }
+  idsProdutoCarrinhoComQuantidade[idProduto]--;
+  atualizarInfoQuantidade(idProduto);
+}
+
+function atualizarInfoQuantidade(idProduto) {
+  document.getElementById(`quantidade-${idProduto}`).innerText =
+    idsProdutoCarrinhoComQuantidade[idProduto];
+}
+
+function desenharProdutoCarrinho(idProduto) {
   const produto = catalogo.find((p) => p.id === idProduto);
   const containerProdutosCarrinho =
     document.getElementById("produtos-carrinho");
-  const cardCarrinho = `<article class="flex bg-stone-400 text-stone-900 rounded-lg relative">
-  <button class="absolute top-1 right-2"><i class="fa-solid fa-xmark hover:text-black"></i></button>
-  <img 
+
+  const elemtentoArticle = document.createElement("article");
+  const articleClasses = [
+    "flex",
+    "bg-stone-400",
+    "text-stone-900",
+    "rounded-lg",
+    "relative",
+  ];
+  for (const articleClasse of articleClasses) {
+    elemtentoArticle.classList.add(articleClasse);
+  }
+
+  const cardCarrinho = `<button id="remove-item-${produto.id}"
+    class="absolute top-1 right-2">
+  <i class="fa-solid fa-xmark hover:text-black"></i>
+  </button>
+  <img
   class="h-24" 
   src="./assets/img/${produto.imagem}" 
   alt="${produto.alt}">
@@ -36,13 +74,45 @@ export function addCarrinho(idProduto) {
     <p class="text-green-900 font-bold">R$${produto.preco}</p>
   </div>
   <div class="flex items-end absolute bottom-10 right-10 text-lg">
-    <button>-</button>
+    <button id="decrementar-${produto.id}">-</button>
     <p id="quantidade-${produto.id}" class="ml-2">${
     idsProdutoCarrinhoComQuantidade[produto.id]
   }</p>
-    <button class="ml-2">+</button>
+    <button class="ml-2" id="incrementar-${produto.id}">+</button>
     
-  </div>
-</article>`;
-  containerProdutosCarrinho.innerHTML += cardCarrinho;
+  </div>`;
+
+  elemtentoArticle.innerHTML = cardCarrinho;
+  containerProdutosCarrinho.appendChild(elemtentoArticle);
+
+  document
+    .getElementById(`decrementar-${produto.id}`)
+    .addEventListener("click", () => decrementarQuantidadeProduto(produto.id));
+
+  document
+    .getElementById(`incrementar-${produto.id}`)
+    .addEventListener("click", () => incrementarQuantidadeProduto(produto.id));
+
+  document
+    .getElementById(`remove-item-${produto.id}`)
+    .addEventListener("click", () => removerDoCarrinho(produto.id));
+}
+
+function renderProdutosCarrinho() {
+  const containerProdutosCarrinho =
+    document.getElementById("produtos-carrinho");
+  containerProdutosCarrinho.innerHTML = "";
+
+  for (const idProduto in idsProdutoCarrinhoComQuantidade) {
+    desenharProdutoCarrinho(idProduto);
+  }
+}
+
+export function addCarrinho(idProduto) {
+  if (idProduto in idsProdutoCarrinhoComQuantidade) {
+    incrementarQuantidadeProduto(idProduto);
+    return;
+  }
+  idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+  desenharProdutoCarrinho(idProduto);
 }
