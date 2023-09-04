@@ -1,6 +1,6 @@
-import { catalogo } from "./utilidades";
+import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades";
 
-const idsProdutoCarrinhoComQuantidade = {};
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
 
 function fecharCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0]");
@@ -22,11 +22,15 @@ export function inicializarCarrinho() {
 
 function removerDoCarrinho(idProduto) {
   delete idsProdutoCarrinhoComQuantidade[idProduto];
+  atualizarPrecoCarrinho();
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   renderProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutoCarrinhoComQuantidade[idProduto]++;
+  atualizarPrecoCarrinho();
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarInfoQuantidade(idProduto);
 }
 
@@ -36,6 +40,8 @@ function decrementarQuantidadeProduto(idProduto) {
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
+  atualizarPrecoCarrinho();
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarInfoQuantidade(idProduto);
 }
 
@@ -66,7 +72,7 @@ function desenharProdutoCarrinho(idProduto) {
   <i class="fa-solid fa-xmark hover:text-black"></i>
   </button>
   <img
-  class="h-24" 
+  class="h-24 pl-2" 
   src="./assets/img/${produto.imagem}" 
   alt="${produto.alt}">
   <div class="flex flex-col justify-center p-1">
@@ -98,7 +104,7 @@ function desenharProdutoCarrinho(idProduto) {
     .addEventListener("click", () => removerDoCarrinho(produto.id));
 }
 
-function renderProdutosCarrinho() {
+export function renderProdutosCarrinho() {
   const containerProdutosCarrinho =
     document.getElementById("produtos-carrinho");
   containerProdutosCarrinho.innerHTML = "";
@@ -115,4 +121,17 @@ export function addCarrinho(idProduto) {
   }
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   desenharProdutoCarrinho(idProduto);
+  atualizarPrecoCarrinho();
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
+}
+
+export function atualizarPrecoCarrinho() {
+  const precoCarrinho = document.getElementById("preco-total");
+  let precoTotalCarrinho = 0;
+  for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade) {
+    precoTotalCarrinho +=
+      catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *
+      idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+  }
+  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
 }
