@@ -51,7 +51,7 @@ export const catalogo = [
     preco: 12000,
     imagem: "produto-6.png",
     alt: "DDJ-1000SRT Controlador DJ de atuação de 4 canais para Serato DJ Pro",
-    controladora: false,
+    controladora: true,
   },
   {
     id: "7",

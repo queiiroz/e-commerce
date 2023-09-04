@@ -1,4 +1,5 @@
 import { renderCatalogo } from "./src/cardProduto";
+import { inicializarFiltros } from "./src/filtrosCatalogo";
 import {
   atualizarPrecoCarrinho,
   inicializarCarrinho,
@@ -9,3 +10,4 @@ inicializarCarrinho();
 renderCatalogo();
 atualizarPrecoCarrinho();
 renderProdutosCarrinho();
+inicializarFiltros();
