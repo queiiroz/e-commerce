@@ -80,3 +80,40 @@ export function salvarLocalStorage(chave, informacao) {
 export function lerLocalStorage(chave) {
   return JSON.parse(localStorage.getItem(chave));
 }
+
+export function desenharProdutoCarrinhoSimples(
+  idProduto,
+  idContainerHtml,
+  quantidadeProduto
+) {
+  const produto = catalogo.find((p) => p.id === idProduto);
+  const containerProdutosCarrinho = document.getElementById(idContainerHtml);
+
+  const elemtentoArticle = document.createElement("article");
+  const articleClasses = [
+    "flex",
+    "bg-stone-400",
+    "text-stone-900",
+    "rounded-lg",
+    "relative",
+    "mb-2",
+  ];
+  for (const articleClasse of articleClasses) {
+    elemtentoArticle.classList.add(articleClasse);
+  }
+
+  const cardCarrinho = `<img
+  class="h-24 pl-2" 
+  src="./assets/img/${produto.imagem}" 
+  alt="${produto.alt}">
+  <div class="flex flex-col justify-center p-1">
+    <p class="text-xs">${produto.nome}</p>
+    <p class="text-green-900 font-bold">R$${produto.preco}</p>
+  </div>
+  <div class="flex items-end absolute bottom-10 right-10 text-lg">
+    <p id="quantidade-${produto.id}" class="ml-2">${quantidadeProduto}</p> 
+  </div>`;
+
+  elemtentoArticle.innerHTML = cardCarrinho;
+  containerProdutosCarrinho.appendChild(elemtentoArticle);
+}

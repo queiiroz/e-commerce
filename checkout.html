@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./assets/logo/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <body class="bg-stone-200 flex flex-col h-screen">
+
+    <header class="flex bg-stone-900 p-4 justify-between items-center sticky top-0 h-20 shadow-md shadow-stone-500 z-10">
+      <a href="./index.html">
+        <img class="h-8 " src="./assets/logo/logo.png" alt="Logo do site" />
+      </a>
+    </header>
+
+    <form class="flex w-100 py-7 px-5 gap-4 grow">
+
+      <section id="dados-usuario" class="w-1/3 bg-stone-50 rounded-lg py-5">
+        <p class="mb-5 text-center font-bold">Seus Dados</p>
+        <div class="flex flex-col px-6 py-3">
+          <label 
+          for="nome" 
+          class="font-bold text-sm mb-2">Nome</label>
+          <input 
+          type="text" 
+          id="nome" 
+          class="rounded-md px-2 py-1 border-2 border-stone-500" 
+          placeholder="Gleidson Queiroz" 
+          required>
+        </div>
+
+        <div class="flex flex-col px-6 py-3">
+          <label 
+          for="email" 
+          class="font-bold text-sm mb-2">Email</label>
+          <input 
+          type="email" 
+          id="email" 
+          class="rounded-md px-2 py-1 border-2 border-stone-500" 
+          placeholder="gleidsonqueiroz@ecommerce.com" 
+          required>
+        </div>
+
+        <div class="flex flex-col px-6 py-3">
+          <label 
+          for="tel" 
+          class="font-bold text-sm mb-2">Telefone de Contato</label>
+          <input 
+          type="tel" 
+          id="tel" 
+          class="rounded-md px-2 py-1 border-2 border-stone-500" 
+          placeholder="(12) 3456-7890" 
+          required>
+        </div>
+      </section>
+
+      <section 
+      id="pagamento-entrega" 
+      class="w-1/3 bg-stone-50 rounded-lg py-5">
+        <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
+        <div class="flex flex-col px-6 py-3">
+          <label 
+          for="numero-cartao" 
+          class="font-bold text-sm mb-2">Número do Cartão</label>
+          <input 
+          type="text" 
+          id="numero-cartao" 
+          class="rounded-md px-2 py-1 border-2 border-stone-500" 
+          placeholder="1111 2222 3333 4444" 
+          required>
+        </div>
+
+        <div class="flex ">
+          <div class="flex flex-col px-6 py-3 w-1/2">
+            <label 
+            for="cvv" 
+            class="font-bold text-sm mb-2">CVV</label>
+            <input 
+            type="text" 
+            id="cvv" 
+            class="rounded-md px-2 py-1 border-2 border-stone-500" 
+            placeholder="222" 
+            required>
+          </div>
+
+          <div class="flex flex-col px-1 py-3 w-1/2 pr-6">
+            <label 
+            for="data-expiracao" 
+            class="font-bold text-sm mb-2">Validade</label>
+            <input 
+            type="text" 
+            id="data-expiracao" 
+            class="rounded-md px-2 py-1 border-2 border-stone-500" 
+            placeholder="MM/AA" 
+            required>
+          </div>
+        </div>
+        <div class="flex flex-col px-6 py-3">
+          <label 
+          for="endereco" 
+          class="font-bold text-sm mb-2">Endereço</label>
+          <input 
+          type="text" 
+          id="encereco" 
+          class="rounded-md px-2 py-1 border-2 border-stone-500" 
+          placeholder="Rua Frederico Moura" 
+          required>
+        </div>
+        <div class="flex flex-col px-6 py-3">
+          <label 
+          for="cep" 
+          class="font-bold text-sm mb-2">CEP</label>
+          <input 
+          type="text" 
+          id="cep" 
+          class="rounded-md px-2 py-1 border-2 border-stone-500" 
+          placeholder="11222-333" 
+          required>
+        </div>
+        <div class="flex ">
+          <div class="flex flex-col px-6 py-3 w-1/2">
+            <label 
+            for="numero" 
+            class="font-bold text-sm mb-2">Número</label>
+            <input 
+            type="text" 
+            id="numero" 
+            class="rounded-md px-2 py-1 border-2 border-stone-500" 
+            placeholder="1234" 
+            required>
+          </div>
+
+          <div class="flex flex-col px-1 py-3 w-1/2 pr-6">
+            <label 
+            for="complemento" 
+            class="font-bold text-sm mb-2 truncate">Complemento</label>
+            <input 
+            type="text" 
+            id="complemento" 
+            class="rounded-md px-2 py-1 border-2 border-stone-500" 
+            placeholder="5555" 
+            required>
+          </div>
+        
+          
+      </section>
+
+      <section 
+      id="produtos-checkout" 
+      class="w-1/3 bg-stone-50 rounded-lg py-5">
+      
+      <section id="containe-praodutos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
+      
+      <section 
+      id="celula-checkout" 
+      class="flex flex-col px-2 h-1/5 justify-around">
+        <p 
+        id="preco-total" 
+        class="bg-stone-200 text-green-900 font-bold rounded-lg p-3">Total: R$0</p>
+        <button 
+        class="bg-stone-700 text-stone-200 rounded-lg hover:bg-stone-900 p-1" type="submit">Finalizar Compra</button>
+      </section>
+   
+    </section>
+    </form>
+    
+  <script src="./checkout.js" type="module"></script>
+  </body>
+</html>
