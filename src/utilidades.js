@@ -101,6 +101,7 @@ export function desenharProdutoCarrinhoSimples(
     "rounded-lg",
     "relative",
     "mb-2",
+    "w-96",
   ];
   for (const articleClasse of articleClasses) {
     elemtentoArticle.classList.add(articleClasse);
