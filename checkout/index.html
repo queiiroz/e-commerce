@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="icon" type="image/png" href="../assets/logo/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <body class="bg-stone-200 flex flex-col h-screen">
+  <body class="bg-stone-200 flex flex-col h-screen w-screen		">
 
     <header class="flex bg-stone-900 p-4 justify-between items-center sticky top-0 h-20 shadow-md shadow-stone-500 z-10">
       <a href="../index.html">
@@ -15,9 +15,9 @@
       </a>
     </header>
 
-    <form class="flex w-screen py-7 px-5 gap-10 grow">
+    <form class="flex flex-col sm:flex-row py-7 px-5 gap-4 grow">
 
-      <section id="dados-usuario" class="w-1/3 bg-stone-50 rounded-lg py-5">
+      <section id="dados-usuario" class="sm:w-1/3 bg-stone-50 rounded-lg py-5">
         <p class="mb-5 text-center font-bold">Seus Dados</p>
         <div class="flex flex-col px-6 py-3">
           <label 
@@ -58,7 +58,7 @@
 
       <section 
       id="pagamento-entrega" 
-      class="w-1/3 bg-stone-50 rounded-lg py-5">
+      class="sm:w-1/3 bg-stone-50 rounded-lg py-5">
         <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
         <div class="flex flex-col px-6 py-3">
           <label 
@@ -149,7 +149,7 @@
 
       <section 
         id="produtos-checkout" 
-        class="w-1/3 bg-stone-50 rounded-lg py-5">
+        class="sm:w-1/3 bg-stone-50 rounded-lg py-5">
         
           <section id="containe-praodutos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
         
@@ -158,10 +158,10 @@
             class="flex flex-col px-2 h-1/5 justify-around">
             <p 
               id="preco-total" 
-             class="bg-stone-200 text-green-900 font-bold rounded-lg p-3">Total: R$0</p>
+              class="bg-stone-200 text-green-900 font-bold rounded-lg p-3 z-1">Total: R$0</p>
            <button 
-             class="bg-stone-700 text-stone-200 rounded-lg hover:bg-stone-900 p-1" 
-             type="submit">Finalizar Compra</button>
+            class="bg-stone-700 text-stone-200 rounded-lg hover:bg-stone-900 p-1" 
+            type="submit">Finalizar Compra</button>
           </section>
    
       </section>
