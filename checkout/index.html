@@ -15,7 +15,7 @@
       </a>
     </header>
 
-    <form class="flex w-100 py-7 px-5 gap-4 grow">
+    <form class="flex w-screen py-7 px-5 gap-10 grow">
 
       <section id="dados-usuario" class="w-1/3 bg-stone-50 rounded-lg py-5">
         <p class="mb-5 text-center font-bold">Seus Dados</p>
@@ -148,22 +148,23 @@
       </section>
 
       <section 
-      id="produtos-checkout" 
-      class="w-1/3 bg-stone-50 rounded-lg py-5">
-      
-      <section id="containe-praodutos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
-      
-      <section 
-      id="celula-checkout" 
-      class="flex flex-col px-2 h-1/5 justify-around">
-        <p 
-        id="preco-total" 
-        class="bg-stone-200 text-green-900 font-bold rounded-lg p-3">Total: R$0</p>
-        <button 
-        class="bg-stone-700 text-stone-200 rounded-lg hover:bg-stone-900 p-1" type="submit">Finalizar Compra</button>
-      </section>
+        id="produtos-checkout" 
+        class="w-1/3 bg-stone-50 rounded-lg py-5">
+        
+          <section id="containe-praodutos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
+        
+          <section 
+            id="celula-checkout" 
+            class="flex flex-col px-2 h-1/5 justify-around">
+            <p 
+              id="preco-total" 
+             class="bg-stone-200 text-green-900 font-bold rounded-lg p-3">Total: R$0</p>
+           <button 
+             class="bg-stone-700 text-stone-200 rounded-lg hover:bg-stone-900 p-1" 
+             type="submit">Finalizar Compra</button>
+          </section>
    
-    </section>
+      </section>
     </form>
     
   <script src="./checkout.js" type="module"></script>

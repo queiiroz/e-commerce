@@ -1,3 +1,4 @@
+import { atualizarPrecoCarrinho } from "../src/menuCarrinho";
 import {
   desenharProdutoCarrinhoSimples,
   lerLocalStorage,
@@ -36,9 +37,10 @@ function finalizarCompra(evento) {
 
   apagarLocalStorage("carrinho");
 
-  window.location.href = window.location.origin + "/pedidos.html";
+  window.location.href = window.location.origin + "/pedidos/index.html";
 }
 
+atualizarPrecoCarrinho();
 desenharPordutosCheckout();
 
 document.addEventListener("submit", (evt) => finalizarCompra(evt));
