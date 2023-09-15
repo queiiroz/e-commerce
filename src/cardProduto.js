@@ -7,7 +7,7 @@ export function renderCatalogo() {
     ${produtoCatalogo.controladora ? "controladora" : "all-in-one"} " 
     id="card-1 ">
 <img 
-  src="./assets/img/${produtoCatalogo.imagem}"
+  src="../assets/img/${produtoCatalogo.imagem}"
   alt="${produtoCatalogo.alt}"
   class="group-hover:scale-110 duration-300 mx-2"
 />
